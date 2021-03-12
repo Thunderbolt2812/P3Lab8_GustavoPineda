@@ -7,6 +7,7 @@ class Movimiento{
 		int ataque_fila;
 		int ataque_col;
 	public:
+		Movimiento();
 		Movimiento(int, int);
 		void Imprimir();
 };

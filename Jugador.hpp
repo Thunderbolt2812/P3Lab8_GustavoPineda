@@ -6,11 +6,11 @@
 #include"TableroBarcos.hpp"
 using namespace std;
 class Jugador {
-	private:
-		string Nombre;
+	protected:
+		string nombre;
 	public:
 		Jugador(string) ;
-		Movimiento Jugar(TableroAtaque*);
-		void ColocarBarcos(TableroBarcos*);
+		virtual Movimiento Jugar(TableroAtaque*) = 0;
+		virtual void ColocarBarcos(TableroBarcos*) = 0;
 };
 #endif

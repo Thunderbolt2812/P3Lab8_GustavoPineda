@@ -6,7 +6,8 @@
 using namespace std;
 class TableroBarcos: public Tablero {
 	public:
-		void Imprimir();
+		TableroBarcos(vector<vector<char>> celdas);
+		virtual void Imprimir();
 		bool AtaqueExitoso(Movimiento*);
 };
 #endif

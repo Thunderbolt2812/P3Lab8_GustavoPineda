@@ -6,8 +6,8 @@
 using namespace std;
 class TableroAtaque: public Tablero {
 	public:
-		TableroAtaque(string nombre) ;
-		void Imprimir();
+		TableroAtaque(vector<vector<char>>) ;
+		virtual void Imprimir();
 		bool ValidarMovimiento(Movimiento*);
 		void AplicarMovimiento(Movimiento*);
 		bool VerificarVictoria();
