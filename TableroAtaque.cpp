@@ -1,5 +1,8 @@
 #include "TableroAtaque.hpp"
 
+TableroAtaque::TableroAtaque():Tablero(){
+	
+}
 TableroAtaque::TableroAtaque(vector<vector<char>> celdas):Tablero(celdas) {
 	this->celdas = celdas;
 }

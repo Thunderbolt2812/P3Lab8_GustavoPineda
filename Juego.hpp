@@ -2,6 +2,8 @@
 #define JUEGO_HPP
 #include<vector>
 #include<iostream>
+#include "JugadorHumano.hpp"
+#include "JugadorPc.hpp"
 #include "TableroBarcos.hpp"
 #include "TableroAtaque.hpp"
 #include "Jugador.hpp"
@@ -13,7 +15,6 @@ class Juego {
 		Jugador** jugadores;
 	public:
 		Juego();
-		Juego(TableroBarcos**,TableroAtaque**,Jugador**) ;
 		~Juego();
 		void PrepararJuego();
 		void Jugar();
