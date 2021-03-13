@@ -10,5 +10,7 @@ class Movimiento{
 		Movimiento();
 		Movimiento(int, int);
 		void Imprimir();
+		int getFila();
+		int getColumna();
 };
 #endif

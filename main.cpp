@@ -23,6 +23,7 @@ int main(int argc, char** argv) {
 			Juego* j = new Juego();	
 			j->PrepararJuego();
 			j->Jugar();
+			j->~Juego();
 		}
 	}
 	return 0;

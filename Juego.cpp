@@ -23,14 +23,14 @@ Juego::Juego(){
 		}
 	}
 }
-Juego::~Juego(){}
+Juego::~Juego(){
+}
 
 void Juego::PrepararJuego(){
 	string nombre;
 	cout<<"Jugador 1 Ingrese su nombre: ";
 	cin>>nombre;
-	JugadorHumano j1 = JugadorHumano(nombre);
-	jugadores[0] = &j1;
+	jugadores[0] = new JugadorHumano(nombre);
 	string nombre2;
 	int opcion;
 	cout<<"Ingrese el tipo de oponente"<<endl;
@@ -46,19 +46,35 @@ void Juego::PrepararJuego(){
 	if(opcion == 1){
 		cout<<"Jugador 2 Ingrese su nombre: ";
 		cin>>nombre2;
-		JugadorHumano j2 = JugadorHumano(nombre2);
-		jugadores[1] = &j2;
+		jugadores[1] = new JugadorHumano(nombre2);
 	}else{
-		JugadorHumano j2 = JugadorHumano("Pc");
-		jugadores[1] = &j2;
+		jugadores[1] = new JugadorPc("PC");
 	}
 	jugadores[0]->ColocarBarcos(tablerosBarcos[0]);
+	cout<<"Coloque sus Barcos jugador 2"<<endl;
 	jugadores[1]->ColocarBarcos(tablerosBarcos[1]);
 }
 void Juego::Jugar(){
-	int j1x = 0,j2x = 0;
+	int j1x = 0,j2x = 0,cont = 1, x, y;
 	while(j1x!=17||j2x!=17){
-		
+		cout<<"Turno: "<<cont<<endl;
+		bool valido = false;
+		while(!valido){
+			cout<<"Jugador 1: Ingrese Coordenada x y y"<<endl;
+			cout<<"x: ";
+			cin>>x;
+			cout<<endl;
+			cout<<"y: ";
+			cin>>y;
+			cout<<endl;
+			Movimiento* m = new Movimiento(x,y);
+			if(tablerosAtaque[1]->ValidarMovimiento(m)){
+				tablerosAtaque[1]->AplicarMovimiento(m);
+				valido = true;
+			}else{
+				cout<<"Movimiento invalido"<<endl;
+			}
+		}
 	}
 	if(j1x==17){
 		cout<<"El ganador es: "<<jugadores[0]->getNombre()<<endl;

@@ -8,3 +8,9 @@ Movimiento::Movimiento(){}
 void Imprimir(){
 	
 }
+int Movimiento::getFila(){
+	return this->ataque_fila;
+}
+int Movimiento::getColumna(){
+	return this->ataque_col;
+}
